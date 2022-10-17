@@ -281,7 +281,6 @@
   const mainTL = gsap.timeline({
     scrollTrigger: {
       trigger: "main",
-      // markers: true,
       scrub: 3,
       pin: true,
       start: "top top",
@@ -308,8 +307,7 @@
     .from("#things .things-contents .con-01-txt .creativity-span hr:nth-child(2)", { width: 0 })
     .from("#things .things-contents .con-01-txt .creativity-span hr:nth-child(3)", { width: 0 })
     .to("#things .things-contents img", { scale: 1 })
-    // .to("#things .things-contents img", { scale: 1.5 ,duration:10, delay:10 },2)
-    
+
     const things02TL = gsap.timeline({
       scrollTrigger: {
         trigger: "#things02",
