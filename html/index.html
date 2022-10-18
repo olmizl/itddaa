@@ -278,6 +278,7 @@
 <script>
   Splitting();
 
+   // ⭐main 페이지 gsap 애니메이션
   const mainTL = gsap.timeline({
     scrollTrigger: {
       trigger: "main",
@@ -290,6 +291,7 @@
 
   mainTL.to("#mainVisual .scroll-bg ", { x: -1200, duration: 10 });
 
+   // ⭐things 페이지 gsap 애니메이션
   const things01TL = gsap.timeline({
     scrollTrigger: {
       trigger: "#things",
@@ -308,6 +310,7 @@
     .from("#things .things-contents .con-01-txt .creativity-span hr:nth-child(3)", { width: 0 })
     .to("#things .things-contents img", { scale: 1 })
 
+     // ⭐things02 페이지 gsap 애니메이션
     const things02TL = gsap.timeline({
       scrollTrigger: {
         trigger: "#things02",
@@ -323,6 +326,7 @@
     .from("#things02 .con-01-bot .bot-txt-01", { y:300,  },0)
     .from("#things02 .con-01-bot .bot-txt-02", { y:300,  },0)
 
+     // ⭐bg-all 페이지 gsap 애니메이션
     const inkTL = gsap.timeline({
       scrollTrigger:{
         trigger:"#bg-all",
@@ -335,6 +339,7 @@
     .to("#ink .img01 img",{y:700, duration:10},0)
 
 
+     // ⭐bg-all-02 페이지 gsap 애니메이션
     const shinTL = gsap.timeline({
       scrollTrigger:{
         trigger:"#bg-all-02",
@@ -346,7 +351,7 @@
     .to("#bg-all-02 #shin", {y:-1000, duration:10})
     .to("#shin .image .img01",{y:700, duration:10},0)
 
-
+     // ⭐video 페이지 gsap 애니메이션
     const itddaaTL = gsap.timeline({
       scrollTrigger:{
         trigger:"#video",
@@ -358,6 +363,7 @@
     itddaaTL
     .from("#video .itddaa .char", {opacity:0, stagger:{each:0.1}})
 
+     // ⭐creative 페이지 gsap 애니메이션
     const creativeTL = gsap.timeline({
       scrollTrigger:{
         trigger:"#creative",
@@ -371,6 +377,7 @@
     .from("#creative .mate01", {opacity:0, x:200})
 
 
+     // ⭐contact 페이지 gsap 애니메이션
     const logoTL = gsap.timeline({
       scrollTrigger:{
         trigger:"#contact",
@@ -381,10 +388,13 @@
     logoTL
     .from("#contact .contact-bottom .logo03", {opacity:0,})
 
-const circle = $("#circle")[0];
-new CircleType(circle)
 
-const cursor = $(".cursor");
+     // ⭐ text circle 플러그인 기능
+    const circle = $("#circle")[0];
+    new CircleType(circle)
+
+    // ⭐마우스 커서 style 부여
+    const cursor = $(".cursor");
 
     $(window).on(
       "mousemove",
@@ -394,40 +404,49 @@ const cursor = $(".cursor");
       }, 1000 / 100)
     );
 
+    // ⭐mainVisual 페이지 커서 이동시 "ITDDAA" Text 추가
     $("#mainVisual").on("mouseenter", function(){
       cursor.find(".txt").text("ITDDAA");
       gsap.killTweensOf(cursor);
       gsap.to(cursor, { width: 100, height: 100, backgroundColor: "blue", ease: "elastic", duration: 1 });
     })
 
+    // ⭐ things 페이지 커서 이동시 "CREATIVITY" Text 추가
     $("#things").on("mouseenter", function(){
       cursor.find(".txt").text("CREATIVITY");
       gsap.killTweensOf(cursor);
       gsap.to(cursor, { width: 100, height: 100, backgroundColor: "purple", ease: "elastic", duration: 1 });
     })
 
+    // ⭐ ink 페이지 커서 이동시 "INK" Text 추가
     $("#ink").on("mouseenter", function(){
       cursor.find(".txt").text("INK");
       gsap.killTweensOf(cursor);
       gsap.to(cursor, { width: 100, height: 100, backgroundColor: "skyblue", ease: "elastic", duration: 1 });
     })
 
+    // ⭐ greenfoot 페이지 커서 이동시 "GREENFOOT" Text 추가
     $("#greenfoot").on("mouseenter", function(){
       cursor.find(".txt").text("GREENFOOT");
       gsap.killTweensOf(cursor);
       gsap.to(cursor, { width: 100, height: 100, backgroundColor: "red", ease: "elastic", duration: 1 });
     })
+
+    // ⭐ shin 페이지 커서 이동시 "SHINSEGAELAW" Text 추가
     $("#shin").on("mouseenter", function(){
       cursor.find(".txt").text("SHINSEGAELAW");
       gsap.killTweensOf(cursor);
       gsap.to(cursor, { width: 100, height: 100, backgroundColor: "red", ease: "elastic", duration: 1 });
     })
+
+    // ⭐ nexnine 페이지 커서 이동시 "NEXNINE" Text 추가
     $("#nexnine").on("mouseenter", function(){
       cursor.find(".txt").text("NEXNINE");
       gsap.killTweensOf(cursor);
       gsap.to(cursor, { width: 100, height: 100, backgroundColor: "red", ease: "elastic", duration: 1 });
     })
 
+     // ⭐ nexnine 페이지 커서 해제시  커서 스타일 효과 해제
    $("#nexnine").on("mouseleave", function(){
       cursor.find(".txt").text("");
       gsap.killTweensOf(cursor);
@@ -444,6 +463,7 @@ const cursor = $(".cursor");
     const hoverList04_img = $("#footer .fot-list li .fot-list-con img.fot-img04")
 
 
+    // ⭐hoverList 마우스 호버 시 이미지 opacity 부여
     hoverList01.hover(function(){
       gsap.to(hoverList01_img, {opacity:0.5})
     },
@@ -469,13 +489,4 @@ const cursor = $(".cursor");
       gsap.to(hoverList04_img, {opacity:0})
     })
 
-
-
-    
-
-    
-   
-
-
-    
 </script>

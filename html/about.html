@@ -212,6 +212,7 @@
 
       Splitting();
 
+      // ⭐about 페이지 gsap 애니메이션
       const aboutTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#about",
@@ -225,6 +226,7 @@
         .from("#about .about-top h2 ", { opacity: 0 })
         .from("#about .about-bottom img ", { opacity: 0, scale: 0 });
 
+      // ⭐goals 페이지 gsap 애니메이션
       const goalTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#goals",
@@ -235,6 +237,7 @@
 
       gsap.fromTo("#goals .goals-top img", { scale: 0 }, { left: "4%" });
 
+      // ⭐understand 페이지 gsap 애니메이션
       const undTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#understand",
@@ -248,6 +251,7 @@
         .from("#understand .und-bottom .und-bot-con h1 ", { y: 200, duration: 10, delay: 3 }, 2)
         .from("#understand .und-bottom .und-bot-con h4 ", { y: 200, duration: 10, delay: 3 }, 2);
 
+      // ⭐contact 페이지 gsap 애니메이션
       const logoTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#contact",
@@ -257,6 +261,7 @@
       });
       logoTL.from("#contact .contact-bottom .logo03", { opacity: 0 });
 
+      // ⭐building 페이지 gsap 애니메이션
       const buildingTL = gsap.timeline({
         scrollTrigger: {
           trigger: "#building",
